@@ -1,0 +1,534 @@
+/*-------------------------*\
+   # style.css
+\*-------------------------*/
+
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --eerie-black-1: hsl(0, 0%, 9%);
+  --gray-web: hsl(0, 0%, 50%);
+  --white: hsl(0, 0%, 100%);
+  --black_30: hsla(0, 0%, 0%, 0.3);
+  --box: #1b1b1b;
+  /**
+   * gradient color
+   */
+
+  /*========== Font and typography ==========*/
+
+  --ff-quicksand: "Quicksand", sans-serif;
+  --ff-mulish: "Mulish", sans-serif;
+  --header-height: 3.5rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+}
+
+/*=============== VARIABLES CSS ===============*/
+
+/*-------------------------*\
+   #Reset
+\*-------------------------*/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+i,
+img,
+input,
+label,
+button,
+textarea {
+  display: block;
+}
+
+button {
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  border: none;
+  font: inherit;
+  width: 100%;
+}
+
+html {
+  font-family: var(--ff-quicksand);
+  scroll-behavior: smooth;
+}
+
+body {
+  background: black;
+}
+
+.grid {
+  display: grid;
+}
+
+/*-------------------------*\
+   #HEADER & NAV
+\*-------------------------*/
+
+.header {
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  background: black;
+  z-index: 0;
+}
+
+.nav {
+  position: relative;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav--toggle,
+.nav--actions {
+  display: flex;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.nav--logo {
+  font-weight: var(--font-semi-bold);
+  column-gap: 0.25rem;
+  align-items: center;
+}
+
+.nav--logo {
+  font-size: 2rem;
+  color: var(--white);
+  font-weight: var(--fw-600);
+}
+
+.button {
+  background: var(--box);
+  color: var(--white);
+  display: inline-block;
+  transition: 0.3s;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 30px;
+}
+
+.button a {
+  color: var(--white);
+}
+
+.nav--actions {
+  font-size: 1.25rem;
+  column-gap: 0.5rem;
+  align-items: center;
+}
+
+/* Navigation for mobile devices */
+
+@media screen and (max-width: 767px) {
+  .nav--menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background-color: black;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    width: 45%;
+    height: 100%;
+    padding: 6rem 3rem 0;
+    transition: right 0.4s;
+  }
+}
+
+.nav--list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+}
+
+.nav--link {
+  color: var(--gray-web);
+  font-weight: var(--font-semi-bold);
+  transition: color 0.4s;
+}
+
+.nav--link:hover {
+  color: var(--gray-web);
+}
+
+.nav--close {
+  position: absolute;
+  top: 1.15rem;
+  right: 1.5rem;
+  font-size: 1.25rem;
+  color: var(--white);
+}
+
+/* show menu */
+
+.show--menu {
+  right: 0;
+}
+
+/*-------------------------*\
+   #REUSED STYLE
+\*-------------------------*/
+
+.container {
+  padding-inline: 3.5rem;
+}
+
+/*-------------------------*\
+   #HOME
+\*-------------------------*/
+
+.contact--main-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1.5rem;
+  margin-top: 7rem;
+}
+
+.contact--fast-container {
+  height: 600px;
+}
+
+.contact--card {
+  display: grid;
+  grid-template-rows: repeat(4fr, 1fr);
+  gap: 2rem;
+}
+
+.mail--card {
+  height: 115px;
+  display: flex;
+  padding: 18px 1rem 1rem 0;
+}
+
+.mail--icon,
+.contactus--icon,
+.location--icon {
+  height: 75px;
+  width: 75px;
+  background: var(--box);
+  border-radius: 1rem;
+}
+
+.mail--icon i,
+.contactus--icon i,
+.location--icon i,
+.facebook--icon i,
+.linkedin--icon i,
+.instagram--icon i {
+  padding: 20px 21px;
+  font-size: 2rem;
+  color: var(--white);
+}
+
+.mail--text,
+.contactus--text,
+.location--text {
+  padding: 5px 0 0 1.5rem;
+}
+
+.mail--text p,
+.contactus--text p,
+.location--text p {
+  line-height: 26px;
+  color: var(--white);
+}
+
+.contact--fast-container h4 {
+  color: var(--gray-web);
+}
+
+.contact--fast-container h3,
+h2 {
+  color: var(--white);
+}
+
+.contactus--card {
+  height: 115px;
+  display: flex;
+}
+
+.location--card {
+  height: 115px;
+  display: flex;
+}
+
+.social--info {
+  height: 130px;
+}
+
+.social--icon {
+  display: flex;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+.facebook--icon,
+.linkedin--icon,
+.instagram--icon {
+  height: 75px;
+  width: 75px;
+  background: var(--box);
+  border-radius: 50%;
+}
+
+.contact--scend-container {
+  height: 600px;
+  background: var(--box);
+  border-radius: 2rem;
+}
+
+.contact--scend-container h1 {
+  margin: 2.5rem 0 2rem 2.3rem;
+  font-size: 2.5rem;
+  color: white;
+}
+
+.contact--scend-container h1 span {
+  color: #7797f9;
+}
+
+.input-wrapper {
+  padding: 0 2.3rem 0 2.3rem;
+}
+
+.input-field {
+  height: 3.5rem;
+  margin-bottom: 1rem;
+  background: var(--black_30);
+  border-radius: 10px;
+}
+
+input {
+  padding-left: 1.3rem;
+  color: #fff;
+}
+
+textarea {
+  height: 10rem;
+  background: var(--black_30);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  color: #fff;
+}
+
+.btn-primary {
+  margin: 1rem 0rem 0;
+  width: 100%;
+  background: var(--black_30);
+  height: 3.5rem;
+  border-radius: 1rem;
+}
+
+.btn-primary a {
+  color: white;
+  font-size: 1rem;
+}
+
+.btn-primary:hover {
+  background: white;
+}
+
+.btn-primary a:hover {
+  color: #323232;
+}
+
+/* ========== media 576px ========== */
+/* For small devices */
+
+@media (max-width: 576px) {
+  .container {
+    padding-inline: 1.2rem;
+  }
+
+  .contact--main-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .contact--scend-container {
+    height: 41rem;
+    margin-top: 4rem;
+  }
+
+  .input-wrapper {
+    max-width: 30.5rem;
+    width: 100%;
+    padding: 0 1rem 0 1rem;
+    margin-inline: auto;
+  }
+
+  .btn-primary {
+    max-width: 28.5rem;
+    width: 100%;
+    padding: 0 1rem 0 1rem;
+    margin-inline: auto;
+  }
+}
+
+/* For small devices */
+
+@media screen and (min-device-width: 577px) and (max-device-width: 766px) {
+  .container {
+    padding-inline: 1.2rem;
+  }
+
+  .contact--main-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+/*-------------------------*\
+   #footer section
+\*-------------------------*/
+
+.footer--container {
+  margin-top: 7rem;
+}
+
+.footer--text h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--white);
+}
+
+.footer--list,
+.copy--right {
+  display: flex;
+  justify-content: center;
+}
+
+.footer--list li {
+  padding: 1.5rem;
+}
+
+.footer--list li a:hover {
+  color: var(--gray-web);
+}
+
+.footer--list a,
+p {
+  color: var(--gray-web);
+  font-size: 12px;
+}
+
+.copy--right p {
+  margin: 1.3rem 0 5rem 0;
+  font-size: 15px;
+}
+
+.copy--right span {
+  color: #7797f9;
+}
+
+/*-------------------------*\
+   #responsive
+\*-------------------------*/
+
+/*=============== media 1024px ===============*/
+/* For large devices */
+
+@media (min-width: 1150px) {
+  .container {
+    margin-inline: auto;
+  }
+
+  .section {
+    padding-block: 7rem 2rem;
+  }
+
+  .nav {
+    height: calc(--header-height) + 2rem;
+  }
+
+  .nav--toggle,
+  .nav--close {
+    display: none;
+  }
+
+  .nav--menu {
+    width: initial;
+  }
+
+  .nav--list {
+    flex-direction: row;
+    column-gap: 3.5rem;
+  }
+}
+
+/*=============== media 1072px ===============*/
+
+@media screen and (min-device-width: 767px) and (max-device-width: 920px) {
+  .contact--scend-container {
+    height: 645px;
+  }
+}
+
+/*-------------------------*\
+   #footer responsive
+\*-------------------------*/
+
+/* For large devices */
+
+@media (min-width: 767px) {
+  .container {
+    margin-inline: auto;
+  }
+
+  .section {
+    padding-block: 7rem 2rem;
+  }
+
+  .nav {
+    height: calc(--header-height) + 2rem;
+  }
+
+  .nav--toggle,
+  .nav--close {
+    display: none;
+  }
+
+  .nav--menu {
+    width: initial;
+  }
+
+  .nav--list {
+    flex-direction: row;
+    column-gap: 3.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav--actions button {
+    display: none;
+  }
+}
